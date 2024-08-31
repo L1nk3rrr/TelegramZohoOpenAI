@@ -1,0 +1,8 @@
+[flake8]
+exclude =
+    .git,
+    __pychache__,
+    .idea,
+    .env,
+filename = *.py
+max-line-length = 120
