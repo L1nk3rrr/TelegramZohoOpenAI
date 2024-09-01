@@ -27,7 +27,7 @@ async def start_inline(update: Update, context: CallbackContext) -> None:
 async def button_handler(update: Update, context):
     query = update.callback_query
     if query.data == "get_leads":
-        leads = make_zoho_api_get_request(ZOHO_API_CRM_URL)
+        leads = await make_zoho_api_get_request(ZOHO_API_CRM_URL)
         leads_keyboard = create_inline_keyboard_from_leads(leads['data'])
         await query.edit_message_text(text='Select Lead', reply_markup=leads_keyboard)
     else:
